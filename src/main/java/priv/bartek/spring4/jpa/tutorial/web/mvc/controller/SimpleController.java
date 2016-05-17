@@ -1,6 +1,7 @@
 package priv.bartek.spring4.jpa.tutorial.web.mvc.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
@@ -16,7 +17,7 @@ import priv.bartek.spring4.jpa.tutorial.model.Person;
 import priv.bartek.spring4.jpa.tutorial.service.PersonService;
 
 @Controller
-@RequestMapping("/app")
+@RequestMapping("/")
 public class SimpleController {
 	
 	@Autowired
@@ -27,7 +28,7 @@ public class SimpleController {
 		System.out.println("Simple Controller created");
 	}
 
-	@RequestMapping("/helloWorld.html")
+	@RequestMapping("/")
 	public ModelAndView helloWorld() {
 
 		Person p = new Person();
@@ -47,5 +48,5 @@ public class SimpleController {
 		String message = "Hello " + p.getFirstName() + " " + p.getSurname() + " born: " + p.getBirthDate();
 		return new ModelAndView("welcome", "message", message);
 	}
-
+	
 }
