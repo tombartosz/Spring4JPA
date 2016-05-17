@@ -1,6 +1,9 @@
 package priv.bartek.spring4.jpa.tutorial.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +23,12 @@ public class PersonServiceImpl implements PersonService {
 	public void save(Person p) {
 		dao.save(p);
 
+	}
+
+	@Override
+	public List<Person> findAll() {
+		Sort defaultSort = new Sort("id");
+		return dao.findAll(defaultSort);
 	}
 
 }
