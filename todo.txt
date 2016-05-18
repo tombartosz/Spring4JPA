@@ -2,7 +2,7 @@
 ----------
 
 + 1. Add entity address with embedded: Post Addres, Metadata, GIS location
-2. Add form to add Person to database - JSP+Bootstrap + controller
++ 2. Add form to add Person to database - JSP+Bootstrap + controller
 3. Add form to edit Person in database - JPS+Bootstrap + controller + service
 3. Add form to delete Person in database - JPS+Bootstrap + controller + service
 

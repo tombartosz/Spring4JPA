@@ -6,6 +6,8 @@ import java.lang.String;
 import java.util.Date;
 import javax.persistence.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import priv.bartek.spring4.jpa.tutorial.model.common.Metadata;
 
 /**
@@ -23,6 +25,8 @@ public class Person implements Serializable {
 	private String secondName;
 	private String otherNames;
 	private String surname;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date birthDate;
 
 	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
