@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.lang.Long;
 import java.lang.String;
 import java.util.Date;
+import java.util.Set;
+
 import javax.persistence.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -37,6 +39,9 @@ public class Person implements Serializable {
 	
 	@Embedded
 	private Metadata metadata;
+	
+	@ElementCollection
+	private Set<Item> items;
 
 	private static final long serialVersionUID = 1L;
 
@@ -107,5 +112,23 @@ public class Person implements Serializable {
 	public void setCorrespondenceAddress(Address correspondenceAddress) {
 		this.correspondenceAddress = correspondenceAddress;
 	}
+
+	public Metadata getMetadata() {
+		return metadata;
+	}
+
+	public void setMetadata(Metadata metadata) {
+		this.metadata = metadata;
+	}
+
+	public Set<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(Set<Item> items) {
+		this.items = items;
+	}
+	
+	
 
 }

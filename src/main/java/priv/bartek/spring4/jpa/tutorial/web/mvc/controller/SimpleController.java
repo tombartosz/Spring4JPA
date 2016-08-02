@@ -1,7 +1,9 @@
 package priv.bartek.spring4.jpa.tutorial.web.mvc.controller;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.PostConstruct;
 
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import priv.bartek.spring4.jpa.tutorial.model.Item;
 import priv.bartek.spring4.jpa.tutorial.model.Person;
 import priv.bartek.spring4.jpa.tutorial.service.PersonService;
 import priv.bartek.spring4.jpa.tutorial.toys.JavaEightToys;
@@ -46,6 +49,13 @@ public class SimpleController {
 		p.setBirthDate(birthDate);
 		p.setFirstName(firstName);
 		p.setSurname(surname);
+		
+		Item item = new Item("Book: " + RandomStringUtils.randomAlphabetic(10), RandomUtils.nextDouble(0, 100));
+		Set<Item> items = new HashSet<>();
+		
+		items.add(item);
+		p.setItems(items);
+		
 		
 		personService.save(p);
 

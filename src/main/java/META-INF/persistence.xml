@@ -6,5 +6,6 @@
 		<class>priv.bartek.spring4.jpa.tutorial.model.address.PostAddress</class>
 		<class>priv.bartek.spring4.jpa.tutorial.model.address.GeoLocation</class>
 		<class>priv.bartek.spring4.jpa.tutorial.model.common.Metadata</class>
+		<class>priv.bartek.spring4.jpa.tutorial.model.Item</class>
 	</persistence-unit>
 </persistence>
