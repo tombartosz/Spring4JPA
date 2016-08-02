@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import priv.bartek.spring4.jpa.tutorial.model.Person;
 import priv.bartek.spring4.jpa.tutorial.service.PersonService;
+import priv.bartek.spring4.jpa.tutorial.toys.JavaEightToys;
 
 @Controller
 @RequestMapping("/")
@@ -22,6 +23,9 @@ public class SimpleController {
 	
 	@Autowired
 	private PersonService personService;
+	
+	@Autowired
+	private JavaEightToys toys;
 
 	@PostConstruct
 	public void postConstruct() {
@@ -45,7 +49,8 @@ public class SimpleController {
 		
 		personService.save(p);
 
-		String message = "Hello " + p.getFirstName() + " " + p.getSurname() + " born: " + p.getBirthDate();
+		//String message = "Hello " + p.getFirstName() + " " + p.getSurname() + " born: " + p.getBirthDate();
+		String message = "Play: " + toys.oddPlay();
 		return new ModelAndView("welcome", "message", message);
 	}
 	
